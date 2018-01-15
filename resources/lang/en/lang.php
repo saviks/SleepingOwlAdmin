@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'dashboard' => 'Dashboard',
+    'dashboard' => 'Workbench',
     '404' => 'Page not found.',
     'auth' => [
         'title' => 'Authorization',

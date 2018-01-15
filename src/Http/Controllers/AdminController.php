@@ -237,7 +237,7 @@ class AdminController extends Controller
         $nextAction = $request->input('next_action');
 
         $backUrl = $this->getBackUrl($request);
-
+//dd($backUrl);
         if ($editForm instanceof FormInterface) {
             if (($validator = $editForm->validateForm($model)) instanceof Validator) {
                 return redirect()->back()
@@ -257,6 +257,7 @@ class AdminController extends Controller
 
 
         if ($nextAction == 'save_and_continue') {
+
             $response = redirect()->back()->with([
                 '_redirectBack' => $backUrl,
             ]);
@@ -278,7 +279,9 @@ class AdminController extends Controller
                 '_redirectBack' => $backUrl,
             ]);
         } else {
-            $response = redirect()->to($request->input('_redirectBack', $model->getDisplayUrl()));
+            //dd($request->input('_redirectBack', $model->getDisplayUrl()));
+            $response = redirect()->to('/admin');
+            //$response = redirect()->to($request->input('_redirectBack', $model->getDisplayUrl()));
         }
 
         return $response->with('success_message', $model->getMessageOnUpdate());

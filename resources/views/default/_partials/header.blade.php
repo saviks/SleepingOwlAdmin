@@ -1,20 +1,46 @@
-<a href="{{ url(config('sleeping_owl.url_prefix')) }}" class="logo">
-	<span class="logo-lg">{!! AdminTemplate::getLogo() !!}</span>
-	<span class="logo-mini">{!! AdminTemplate::getLogoMini() !!}</span>
-</a>
+<style>
+	table{
+		border-collapse:collapse;
+		width:100%;
+	}
 
-<nav class="navbar navbar-static-top" role="navigation">
-	<!-- Sidebar toggle button-->
-	<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-		<span class="sr-only">Toggle navigation</span>
-	</a>
-	<div class="navbar-custom-menu">	
-		<ul class="nav navbar-nav">
-			@yield('navbar')
-		</ul>
 
-		<ul class="nav navbar-nav navbar-right">
-			@yield('navbar.right')
-		</ul>
-	</div>
-</nav>
+	th,td{
+		text-align:center;
+		padding:5px 0;
+	}
+
+
+
+	.fixed{
+		top:0;
+		position:fixed;
+		width:auto;
+		display:none;
+		border:none;
+	}
+	.nav_menu ul{
+		background: #222d32;
+		overflow: hidden;
+		padding: 0;
+	}
+	.nav_menu ul li{
+		list-style: none;
+		float: left;
+		padding: 10px 0px;
+		text-align: center;
+		color: #b8c7ce;
+		width: 14%;
+	}
+	.nav_menu ul li:hover{
+		color: #fff;
+	}
+	.active_menu{
+		background: #3c8dbc;
+		color: #fff !important;
+	}
+
+
+</style>
+{!! app('sleeping_owl.navigation')->render() !!}
+
